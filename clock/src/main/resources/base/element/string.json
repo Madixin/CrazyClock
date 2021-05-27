@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "app_name",
+      "value": "clock"
+    },
+    {
+      "name": "clockalarmability_description",
+      "value": "Java_Phone_Empty Feature Ability"
+    },
+    {
+      "name": "clockalarmability_HelloWorld",
+      "value": "Hello World"
+    }
+  ]
+}
