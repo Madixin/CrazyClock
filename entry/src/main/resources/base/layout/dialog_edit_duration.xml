@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_content"
+    ohos:width="match_parent"
+    ohos:orientation="vertical"
+    ohos:top_padding="10vp"
+    ohos:start_padding="12vp">
+
+    <Text
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:text="$string:clockDuration"
+        ohos:layout_alignment="vertical_center"
+        ohos:text_size="20fp"/>
+
+    <RadioContainer
+        ohos:id="$+id:radio_container_duration"
+        ohos:height="match_content"
+        ohos:width="200vp"
+        ohos:layout_alignment="left"
+        ohos:orientation="vertical"
+        ohos:top_margin="16vp"
+        ohos:left_margin="4vp">
+        <RadioButton
+            ohos:id="$+id:radio_btn_duration1"
+            ohos:height="40vp"
+            ohos:width="match_content"
+            ohos:text="$string:oneMinute"
+            ohos:text_size="16fp"
+            ohos:text_color_on="#FF3333"/>
+        <RadioButton
+            ohos:id="$+id:radio_btn_duration5"
+            ohos:height="40vp"
+            ohos:width="match_content"
+            ohos:text="$string:fiveMinute"
+            ohos:text_size="16fp"
+            ohos:text_color_on="#FF3333"/>
+        <RadioButton
+            ohos:id="$+id:radio_btn_duration10"
+            ohos:height="40vp"
+            ohos:width="match_content"
+            ohos:text="$string:tenMinute"
+            ohos:text_size="16fp"
+            ohos:text_color_on="#FF3333"/>
+    </RadioContainer>
+
+
+</DirectionalLayout>

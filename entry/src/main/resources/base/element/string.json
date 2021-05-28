@@ -19,6 +19,62 @@
     {
       "name": "setting",
       "value": "设置"
+    },
+    {
+      "name": "suretomodify",
+      "value": "是否保存更改?"
+    },
+    {
+      "name": "save",
+      "value": "保存"
+    },
+    {
+      "name": "giveup",
+      "value": "放弃"
+    },
+    {
+      "name": "ok",
+      "value": "确定"
+    },
+    {
+      "name": "cancel",
+      "value": "取消"
+    },
+    {
+      "name": "clockname",
+      "value": "闹钟名"
+    },
+    {
+      "name": "defaultName",
+      "value": "早起闹钟"
+    },
+    {
+      "name": "clockBell",
+      "value": "闹钟声音"
+    },
+    {
+      "name": "clockDuration",
+      "value": "闹钟时长"
+    },
+    {
+      "name": "oneMinute",
+      "value": "1 分钟"
+    },
+    {
+      "name": "fiveMinute",
+      "value": "5 分钟"
+    },
+    {
+      "name": "tenMinute",
+      "value": "10 分钟"
+    },
+    {
+      "name": "minute",
+      "value": "分钟"
+    },
+    {
+      "name": "createNew",
+      "value": "新建闹钟"
     }
   ]
 }

@@ -34,6 +34,11 @@ public class MainAbilitySlice extends AbilitySlice {
 
         initTablist();
         initListContainer();
+
+        imageAddClock = (Image) this.findComponentById(ResourceTable.Id_image_add_clock);
+        imageAddClock.setClickedListener(component -> {
+            presentForResult(new AddClockAbilitySlice(), new Intent(), 0);
+        });
     }
 
     private void initListContainer() {
@@ -136,5 +141,19 @@ public class MainAbilitySlice extends AbilitySlice {
     @Override
     public void onForeground(Intent intent) {
         super.onForeground(intent);
+    }
+
+    @Override
+    protected void onResult(int requestCode, Intent resultIntent) {
+        super.onResult(requestCode, resultIntent);
+        if (requestCode == 0 && resultIntent != null) {
+            Boolean isRefresh = resultIntent.getBooleanParam("isRefresh", false);
+            LogUtil.info(TAG, "onResult isRefresh is " + isRefresh);
+            if (isRefresh) {
+                List<Clock> clockList = getAllClocks();
+                listViewClockItemProvider.setDataList(clockList);
+                listClockContainer.setItemProvider(listViewClockItemProvider);
+            }
+        }
     }
 }
