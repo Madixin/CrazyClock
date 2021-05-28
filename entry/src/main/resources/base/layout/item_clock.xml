@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DependentLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_content"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+    <Text
+        ohos:id="$+id:item_text_time"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:layout_alignment="center"
+        ohos:left_margin="20vp"
+        ohos:padding="4vp"
+        ohos:text="Time"
+        ohos:text_size="20fp"/>
+
+    <Text
+        ohos:id="$+id:item_text_name"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:below="$id:item_text_time"
+        ohos:layout_alignment="center"
+        ohos:left_margin="20vp"
+        ohos:padding="4vp"
+        ohos:text="Name"
+        ohos:text_size="20fp"/>
+
+    <Switch
+        ohos:id="$+id:item_switch_state"
+        ohos:height="30vp"
+        ohos:width="60vp"
+        ohos:align_parent_right="true"
+        ohos:right_margin="20vp"
+        ohos:top_margin="20vp"
+        ohos:text_state_off="OFF"
+        ohos:text_state_on="ON"/>
+
+    <Component
+        ohos:height="1vp"
+        ohos:width="match_parent"
+        ohos:background_element="$graphic:list_divider"
+        ohos:below="$id:item_text_name"/>
+
+</DependentLayout>

@@ -20,6 +20,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
     testImplementation 'junit:junit:4.13'
     ohosTestImplementation 'com.huawei.ohos.testkit:runner:1.0.0.100'
+    implementation group:'com.huawei.deveco',name:"previewer-mock-core",version:'1.0.0.1'
     implementation project(":common")
 }
 decc {

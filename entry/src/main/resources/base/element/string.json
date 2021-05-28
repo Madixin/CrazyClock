@@ -2,15 +2,23 @@
   "string": [
     {
       "name": "app_name",
-      "value": "CrazyClock"
+      "value": "多设备闹钟"
     },
     {
-      "name": "mainability_description",
-      "value": "Java_Phone_Empty Feature Ability"
+      "name": "clock",
+      "value": "闹钟"
     },
     {
-      "name": "mainability_HelloWorld",
-      "value": "Hello World"
+      "name": "device",
+      "value": "设备"
+    },
+    {
+      "name": "about",
+      "value": "关于"
+    },
+    {
+      "name": "setting",
+      "value": "设置"
     }
   ]
 }

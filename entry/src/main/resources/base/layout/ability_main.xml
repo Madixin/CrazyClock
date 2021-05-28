@@ -1,18 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<DirectionalLayout
+<DependentLayout
     xmlns:ohos="http://schemas.huawei.com/res/ohos"
     ohos:height="match_parent"
     ohos:width="match_parent"
     ohos:orientation="vertical">
 
-    <Text
-        ohos:id="$+id:text_helloworld"
-        ohos:height="match_content"
-        ohos:width="match_content"
-        ohos:background_element="$graphic:background_ability_main"
-        ohos:layout_alignment="horizontal_center"
-        ohos:text="$string:mainability_HelloWorld"
-        ohos:text_size="50px"
-        />
+    <DirectionalLayout
+        ohos:id="$+id:layout_clock"
+        ohos:height="match_parent"
+        ohos:width="match_parent"
+        ohos:orientation="vertical"
+        ohos:above="$id:tab_bottom_list">
+        <DependentLayout
+            ohos:height="56vp"
+            ohos:width="match_parent"
+            ohos:padding="10vp"
+            >
 
-</DirectionalLayout>
+            <Text
+                ohos:id="$+id:text_clockname"
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:background_element="$graphic:background_ability_main"
+                ohos:layout_alignment="horizontal_center"
+                ohos:text="$string:app_name"
+                ohos:text_size="24fp"
+                ohos:align_parent_left="true"
+                ohos:vertical_center="true"
+                ohos:left_margin="20vp"
+                />
+
+            <Image
+                ohos:id="$+id:image_add_clock"
+                ohos:height="24vp"
+                ohos:width="24vp"
+                ohos:right_margin="20vp"
+                ohos:foreground_element="$media:add"
+                ohos:align_parent_right="true"
+                ohos:vertical_center="true"/>
+
+        </DependentLayout>
+
+        <ListContainer
+            ohos:id="$+id:list_clock_view"
+            ohos:height="match_parent"
+            ohos:width="match_parent"/>
+
+    </DirectionalLayout>
+
+    <DirectionalLayout
+        ohos:id="$+id:layout_setting"
+        ohos:height="match_parent"
+        ohos:width="match_parent"
+        ohos:orientation="vertical"
+        ohos:above="$id:tab_bottom_list"
+        ohos:visibility="hide">
+
+        <DependentLayout
+            ohos:height="56vp"
+            ohos:width="match_parent"
+            ohos:padding="10vp"
+            >
+            <Text
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:background_element="$graphic:background_ability_main"
+                ohos:layout_alignment="horizontal_center"
+                ohos:text="$string:app_name"
+                ohos:text_size="24fp"
+                ohos:align_parent_left="true"
+                ohos:vertical_center="true"
+                ohos:left_margin="20vp"
+                />
+        </DependentLayout>
+
+
+        <DependentLayout
+            ohos:height="match_content"
+            ohos:width="match_parent">
+            <Text
+                ohos:id="$+id:text_aboutLabel"
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:text="$string:about"
+                ohos:text_size="20fp"
+                ohos:layout_alignment="center"
+                ohos:top_margin="10vp"
+                ohos:bottom_margin="10vp"
+                ohos:left_margin="20vp"/>
+
+            <Image
+                ohos:id="$+id:icon_right_about"
+                ohos:height="24vp"
+                ohos:width="12vp"
+                ohos:align_parent_right="true"
+                ohos:right_margin="20vp"
+                ohos:top_margin="10vp"
+                ohos:image_src="$graphic:right_grey"/>
+
+            <Component
+                ohos:height="1vp"
+                ohos:width="match_parent"
+                ohos:background_element="$graphic:list_divider"
+                ohos:below="$id:text_aboutLabel"/>
+        </DependentLayout>
+
+        <DependentLayout
+            ohos:height="match_content"
+            ohos:width="match_parent">
+            <Text
+                ohos:id="$+id:text_deviceLabel"
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:text="$string:device"
+                ohos:text_size="20fp"
+                ohos:layout_alignment="center"
+                ohos:top_margin="10vp"
+                ohos:bottom_margin="10vp"
+                ohos:left_margin="20vp"/>
+
+            <Image
+                ohos:id="$+id:icon_right_device"
+                ohos:height="24vp"
+                ohos:width="12vp"
+                ohos:align_parent_right="true"
+                ohos:right_margin="20vp"
+                ohos:top_margin="10vp"
+                ohos:image_src="$graphic:right_grey"/>
+
+            <Component
+                ohos:height="1vp"
+                ohos:width="match_parent"
+                ohos:background_element="$graphic:list_divider"
+                ohos:below="$id:text_deviceLabel"/>
+        </DependentLayout>
+
+    </DirectionalLayout>
+
+    <TabList
+        ohos:id="$+id:tab_bottom_list"
+        ohos:align_parent_bottom="true"
+        ohos:top_margin="10vp"
+        ohos:tab_margin="24vp"
+        ohos:tab_length="140vp"
+        ohos:text_size="20fp"
+        ohos:height="56vp"
+        ohos:width="match_parent"
+        ohos:layout_alignment="center"
+        ohos:orientation="horizontal"
+        ohos:text_alignment="left|vertical_center"
+
+        ohos:normal_text_color="#FF881515"
+        ohos:selected_text_color="#FFEC0B0B"
+        ohos:selected_tab_indicator_color="#FF1F0606"
+        ohos:selected_tab_indicator_height="2vp"
+        >
+    </TabList>
+
+</DependentLayout>
