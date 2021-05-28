@@ -51,17 +51,17 @@ public class MainAbilitySlice extends AbilitySlice {
             clock1.setName("zzz闹钟");
             clock1.setBell(0);
             clock1.setHour(6);
-            clock1.setDuration(10);
-            clock1.setMinute(66);
+            clock1.setDuration(0);
+            clock1.setMinute(6);
             clock1.setEnable(true);
 
             ClockManager.getInstance(this.getApplicationContext()).createNewClock(clock1);
 
             Clock clock2 = new Clock();
             clock2.setName("madixin闹钟");
-            clock2.setBell(0);
+            clock2.setBell(1);
             clock2.setHour(8);
-            clock2.setDuration(10);
+            clock2.setDuration(1);
             ClockManager.getInstance(this.getApplicationContext()).createNewClock(clock2);
 
             clockList.add(clock1);
@@ -71,6 +71,13 @@ public class MainAbilitySlice extends AbilitySlice {
         listViewClockItemProvider.setDataList(clockList);
         listClockContainer.setItemProvider(listViewClockItemProvider);
         listClockContainer.setReboundEffect(true);
+
+        // 单击跳转到修改页面
+        listClockContainer.setItemClickedListener((listContainer, component, i, l) -> {
+            Intent intent = new Intent();
+            intent.setParam("itemClock", i);
+            presentForResult(new EditClockAbilitySlice(), intent, 0);
+        });
     }
 
     private List<Clock> getAllClocks() {
@@ -106,6 +113,7 @@ public class MainAbilitySlice extends AbilitySlice {
         tabList.addTabSelectedListener(new TabList.TabSelectedListener() {
             Component clockComponent = curSlice.findComponentById(ResourceTable.Id_layout_clock);
             Component settingComponent = curSlice.findComponentById(ResourceTable.Id_layout_setting);
+
             @Override
             public void onSelected(TabList.Tab tab) {
                 LogUtil.info(TAG, "onSelected: " + tab.getPosition());

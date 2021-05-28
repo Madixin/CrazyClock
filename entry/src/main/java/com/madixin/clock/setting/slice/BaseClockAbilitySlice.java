@@ -109,7 +109,7 @@ public class BaseClockAbilitySlice extends AbilitySlice {
      *
      * @param isRefresh 是否刷新界面
      */
-    private void backToMainSlice(boolean isRefresh) {
+    protected void backToMainSlice(boolean isRefresh) {
         Intent resultIntent = new Intent();
         resultIntent.setParam("isRefresh", isRefresh);
         setResult(resultIntent);
