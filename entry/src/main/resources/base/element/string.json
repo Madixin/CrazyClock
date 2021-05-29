@@ -99,6 +99,10 @@
     {
       "name": "allSelect",
       "value": "全选"
+    },
+    {
+      "name": "clockdataability_description",
+      "value": "hap sample empty provider"
     }
   ]
 }

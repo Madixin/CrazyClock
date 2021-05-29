@@ -14,8 +14,8 @@ import ohos.agp.components.TabList;
 import ohos.agp.components.element.Element;
 import ohos.agp.components.element.ElementScatter;
 
-import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
 public class MainAbilitySlice extends AbilitySlice {
 
@@ -48,7 +48,7 @@ public class MainAbilitySlice extends AbilitySlice {
         List<Clock> clockList = getAllClocks();
         if (clockList.size() == 0) {
             Clock clock1 = new Clock();
-            clock1.setName("zzz闹钟");
+            clock1.setName("first闹钟");
             clock1.setBell(0);
             clock1.setHour(6);
             clock1.setDuration(0);
@@ -64,11 +64,20 @@ public class MainAbilitySlice extends AbilitySlice {
             clock2.setDuration(1);
             ClockManager.getInstance(this.getApplicationContext()).createNewClock(clock2);
 
-            clockList.add(clock1);
-            clockList.add(clock2);
+            clockList = getAllClocks();
         }
 
         listViewClockItemProvider.setDataList(clockList);
+
+        // Switch切换按钮
+        listViewClockItemProvider.setSwitchStateChangedListener(((button, isEnable, position) -> {
+            Optional<Clock> clockOptional = ClockManager.getInstance(this.getApplicationContext()).getClockByItemId(position);
+            if (clockOptional.isPresent()) {
+                Clock curClock = clockOptional.get();
+                curClock.setEnable(isEnable);
+                ClockManager.getInstance(this.getApplicationContext()).updateClock(curClock);
+            }
+        }));
         listClockContainer.setItemProvider(listViewClockItemProvider);
         listClockContainer.setReboundEffect(true);
 
@@ -87,7 +96,7 @@ public class MainAbilitySlice extends AbilitySlice {
     }
 
     private List<Clock> getAllClocks() {
-        return new LinkedList<>();
+        return ClockManager.getInstance(this.getApplicationContext()).getAllClocks();
     }
 
     private void initTablist() {
@@ -160,14 +169,20 @@ public class MainAbilitySlice extends AbilitySlice {
     @Override
     protected void onResult(int requestCode, Intent resultIntent) {
         super.onResult(requestCode, resultIntent);
-        if (requestCode == 0 && resultIntent != null) {
+        if (resultIntent == null) {
+            refreshClocks();
+        } else if (requestCode == 0) {
             Boolean isRefresh = resultIntent.getBooleanParam("isRefresh", false);
             LogUtil.info(TAG, "onResult isRefresh is " + isRefresh);
             if (isRefresh) {
-                List<Clock> clockList = getAllClocks();
-                listViewClockItemProvider.setDataList(clockList);
-                listClockContainer.setItemProvider(listViewClockItemProvider);
+                refreshClocks();
             }
         }
+    }
+
+    private void refreshClocks() {
+        List<Clock> clockList = getAllClocks();
+        listViewClockItemProvider.setDataList(clockList);
+        listClockContainer.setItemProvider(listViewClockItemProvider);
     }
 }

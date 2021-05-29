@@ -54,6 +54,16 @@
             }
           ]
         }
+      },
+      {
+        "permissions": [
+          "com.madixin.clock.setting.ability.DataAbilityShellProvider.PROVIDER"
+        ],
+        "name": "com.madixin.clock.setting.ability.ClockDataAbility",
+        "icon": "$media:icon",
+        "description": "$string:clockdataability_description",
+        "type": "data",
+        "uri": "dataability://com.madixin.clock.setting.ability.ClockDataAbility"
       }
     ]
   }

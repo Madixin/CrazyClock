@@ -18,6 +18,12 @@ public class ListViewClockItemProvider extends BaseItemProvider {
 
     private SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
 
+    public interface SwitchStateChangedListener {
+        public void onSwitchStateChanged(Button button, boolean isEnable, int position);
+    }
+
+    private SwitchStateChangedListener switchStateChangedListener;
+
     public ListViewClockItemProvider(AbilitySlice abilitySlice) {
         this.slice = abilitySlice;
     }
@@ -70,8 +76,18 @@ public class ListViewClockItemProvider extends BaseItemProvider {
         calendar.set(Calendar.MINUTE, clock.getMinute());
         viewHolder.textTime.setText(sdf.format(calendar.getTime()));
         viewHolder.switchState.setChecked(clock.isEnable());
-
+        viewHolder.switchState.setCheckedStateChangedListener((button, isEnable) -> {
+            switchStateChangedListener.onSwitchStateChanged(button, isEnable, position);
+        });
         return cpt;
+    }
+
+    public SwitchStateChangedListener getSwitchStateChangedListener() {
+        return switchStateChangedListener;
+    }
+
+    public void setSwitchStateChangedListener(SwitchStateChangedListener switchStateChangedListener) {
+        this.switchStateChangedListener = switchStateChangedListener;
     }
 
     class ViewHolder {
