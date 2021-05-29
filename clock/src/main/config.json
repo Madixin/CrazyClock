@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.madixin.clock.setting",
+    "bundleName": "com.madixin.codelab",
     "vendor": "madixin",
     "version": {
       "code": 1000000,

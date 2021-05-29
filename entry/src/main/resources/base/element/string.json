@@ -91,6 +91,14 @@
     {
       "name": "delete",
       "value": "删除"
+    },
+    {
+      "name": "selectClock",
+      "value": "选择闹钟"
+    },
+    {
+      "name": "allSelect",
+      "value": "全选"
     }
   ]
 }

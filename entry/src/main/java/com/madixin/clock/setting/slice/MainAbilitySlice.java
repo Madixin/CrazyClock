@@ -78,6 +78,12 @@ public class MainAbilitySlice extends AbilitySlice {
             intent.setParam("itemClock", i);
             presentForResult(new EditClockAbilitySlice(), intent, 0);
         });
+
+        // 长按跳转到删除界面
+        listClockContainer.setItemLongClickedListener((listContainer, component, i, l) -> {
+            presentForResult(new DeleteClockAbilitySlice(), new Intent(), 0);
+            return true;
+        });
     }
 
     private List<Clock> getAllClocks() {
