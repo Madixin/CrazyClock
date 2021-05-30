@@ -11,6 +11,14 @@
     {
       "name": "clockalarmability_HelloWorld",
       "value": "Hello World"
+    },
+    {
+      "name": "timeup",
+      "value": "到点了"
+    },
+    {
+      "name": "close",
+      "value": "关闭"
     }
   ]
 }
