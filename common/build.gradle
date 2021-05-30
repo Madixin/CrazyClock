@@ -1,16 +1,5 @@
 apply plugin: 'com.huawei.ohos.library'
 ohos {
-    signingConfigs {
-        debug {
-            storeFile file('D:\\harmony_key\\madixin.p12')
-            storePassword '0000001A59EC571D8E4E696F5B3B063BAC7FF2FBB6E37D681FF8553CAF8F1E3E6CFE942BA62A3F39B157'
-            keyAlias = 'madixin'
-            keyPassword '0000001AE433B45C5AA5EA28585EA8FBCF1AD44940EAC41266EA1B1A411EA788AB5851743C9013785330'
-            signAlg = 'SHA256withECDSA'
-            profile file('D:\\harmony_key\\aaaaDebug.p7b')
-            certpath file('D:\\harmony_key\\我的调试证书.cer')
-        }
-    }
     compileSdkVersion 5
     defaultConfig {
         compatibleSdkVersion 4

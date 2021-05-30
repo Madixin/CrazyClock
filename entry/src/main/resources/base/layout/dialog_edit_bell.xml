@@ -26,7 +26,7 @@
             ohos:id="$+id:radio_btn_bellCanon"
             ohos:height="40vp"
             ohos:width="match_content"
-            ohos:text="Canon"
+            ohos:text="Cannon"
             ohos:text_size="16fp"
             ohos:text_color_on="#FF3333"/>
         <RadioButton

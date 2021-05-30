@@ -17,7 +17,27 @@
     "package": "com.madixin.clock.setting",
     "name": ".MyApplication",
     "deviceType": [
-      "phone"
+      "phone",
+      "tablet"
+    ],
+    "reqPermissions": [
+      {
+        "reason": "多设备协同",
+        "name": "ohos.permission.DISTRIBUTED_DATASYNC"
+      },
+      {
+        "name": "ohos.abilitydemo.permission.PROVIDER",
+        "reason": "get right"
+      },
+      {
+        "name": "ohos.permission.DISTRIBUTED_DEVICE_STATE_CHANGE"
+      },
+      {
+        "name": "ohos.permission.GET_DISTRIBUTED_DEVICE_INFO"
+      },
+      {
+        "name": "ohos.permission.GET_BUNDLE_INFO"
+      }
     ],
     "distro": {
       "deliveryWithInstall": true,
@@ -64,6 +84,12 @@
         "description": "$string:clockdataability_description",
         "type": "data",
         "uri": "dataability://com.madixin.clock.setting.ability.ClockDataAbility"
+      },
+      {
+        "name": "com.madixin.clock.setting.ability.ScheduleServiceAbility",
+        "icon": "$media:icon",
+        "description": "$string:scheduleserviceability_description",
+        "type": "service"
       }
     ]
   }

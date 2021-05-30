@@ -7,6 +7,7 @@ import com.madixin.clock.setting.model.Clock;
 import com.madixin.clock.setting.provider.ListViewClockItemProvider;
 import ohos.aafwk.ability.AbilitySlice;
 import ohos.aafwk.content.Intent;
+import ohos.aafwk.content.Operation;
 import ohos.agp.components.Component;
 import ohos.agp.components.Image;
 import ohos.agp.components.ListContainer;
@@ -29,6 +30,7 @@ public class MainAbilitySlice extends AbilitySlice {
 
     @Override
     public void onStart(Intent intent) {
+        requestPermissionsFromUser(new String[]{"ohos.permission.DISTRIBUTED_DATASYNC"}, 0);
         super.onStart(intent);
         super.setUIContent(ResourceTable.Layout_ability_main);
 
@@ -39,6 +41,22 @@ public class MainAbilitySlice extends AbilitySlice {
         imageAddClock.setClickedListener(component -> {
             presentForResult(new AddClockAbilitySlice(), new Intent(), 0);
         });
+
+        initClockService();
+    }
+
+    /**
+     * 启动后台PA触发定时
+     */
+    private void initClockService() {
+        Intent intent = new Intent();
+        Operation operation = new Intent.OperationBuilder()
+                .withDeviceId("")
+                .withBundleName(getBundleName())
+                .withAbilityName("com.madixin.clock.setting.ability.ScheduleServiceAbility")
+                .build();
+        intent.setOperation(operation);
+        startAbility(intent);
     }
 
     private void initListContainer() {

@@ -103,6 +103,10 @@
     {
       "name": "clockdataability_description",
       "value": "hap sample empty provider"
+    },
+    {
+      "name": "scheduleserviceability_description",
+      "value": "hap sample empty service"
     }
   ]
 }
